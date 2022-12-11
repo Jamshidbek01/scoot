@@ -1,0 +1,124 @@
+.mission {
+    overflow: hidden;
+    margin-bottom: 100px;
+
+    .container {
+
+        .image {
+            width: 445px;
+            height: 445px;
+
+            @include responsive(min-tablet) {
+                width: 400px;
+                height: 400px;
+            }
+
+            @include responsive(phone) {
+                width: 300px;
+                height: 300px;
+            }
+
+        }
+
+        .one,
+        .two {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 190px;
+
+            @include responsive(m-tablet) {
+                flex-direction: column-reverse;
+                gap: 60px;
+                text-align: center;
+            }
+
+            @include responsive(tablet) {
+                gap: 60px;
+            }
+
+            .image {
+                border-radius: 50%;
+            }
+
+            .title {
+                margin-bottom: 24px;
+            }
+
+            .text {
+                margin-bottom: 40px;
+
+                @include responsive(m-tablet) {
+                    margin-bottom: 32px;
+                }
+            }
+
+            .btn:last-child {
+                display: inline-block;
+                height: 56px;
+            }
+
+            .image-wrap {
+                position: relative;
+
+                img:nth-child(2) {
+                    @include responsive(min-tablet) {
+                        display: none;
+                    }
+                }
+
+                img:nth-child(2) {
+                    position: absolute;
+                    top: 0;
+                    right: -480px;
+
+                    @include responsive(m-tablet) {
+                        right: -510px;
+                    }
+                }
+
+                img:nth-child(3) {
+                    position: absolute;
+                    bottom: 0;
+                    left: -120px;
+
+                    @include responsive(min-tablet) {
+                        // width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.careers {
+    margin-bottom: 150px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 32px 40px;
+            background-color: #F2F5F9;
+
+            @include responsive(min-tablet) {
+                flex-direction: column;
+                text-align: center;
+                gap: 14px;
+            }
+        }
+
+        .min-title {
+            margin-bottom: 8px;
+        }
+
+        .btn {
+            text-align: center;
+        }
+    }
+}

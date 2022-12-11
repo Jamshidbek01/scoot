@@ -1,0 +1,269 @@
+.about-min-hero {
+    background-image: url(../images/jpg/about-hero-bg.jpg);
+    @include responsive(tablet) {
+        background-position: left -250px center;
+    }
+}
+.about-second {
+    overflow: hidden;
+    margin-bottom: 100px;
+
+
+    .image {
+        width: 445px;
+        height: 445px;
+
+        @include responsive(min-tablet) {
+            width: 400px;
+            height: 400px;
+        }
+
+        @include responsive(phone) {
+            width: 300px;
+            height: 300px;
+        }
+
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+
+        @include responsive(m-tablet) {
+            gap: 80px;
+        }
+
+        .one,
+        .two {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 190px;
+
+            @include responsive(m-tablet) {
+                flex-direction: column-reverse;
+                gap: 60px;
+                text-align: center;
+            }
+
+            @include responsive(tablet) {
+                gap: 60px;
+            }
+
+            .image {
+                border-radius: 50%;
+            }
+
+            .title {
+                margin-bottom: 24px;
+            }
+
+            .text {
+                margin-bottom: 40px;
+
+                @include responsive(m-tablet) {
+                    margin-bottom: 32px;
+                }
+            }
+
+            .btn:last-child {
+                display: inline-block;
+                height: 56px;
+            }
+
+            .image-wrap {
+                img:nth-child(2) {
+                    @include responsive(min-tablet) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .one {
+            .image-wrap {
+                position: relative;
+
+                img:nth-child(2) {
+                    position: absolute;
+                    top: 0;
+                    right: -480px;
+
+                    @include responsive(m-tablet) {
+                        right: -510px;
+                    }
+                }
+
+                img:nth-child(3) {
+                    position: absolute;
+                    bottom: 0;
+                    left: -120px;
+
+                    @include responsive(min-tablet) {
+                        // width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        .two {
+            flex-direction: row-reverse;
+
+            @include responsive(m-tablet) {
+                flex-direction: column-reverse;
+            }
+
+            .image-wrap {
+                position: relative;
+
+                img:nth-child(2) {
+                    position: absolute;
+                    left: -480px;
+
+                    @include responsive(m-tablet) {
+                        left: -510px;
+                    }
+                }
+
+                img:nth-child(3) {
+                    position: absolute;
+                    top: 0;
+                    right: 200px;
+
+                    @include responsive(min-tablet) {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.value {
+    margin-bottom: 100px;
+
+    .container {
+        .title {
+            margin-bottom: 103px;
+            text-align: center;
+        }
+
+        .card-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+
+            @include responsive(m-tablet) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .list-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .item-img {
+                    position: relative;
+                    margin-bottom: 70px;
+
+                    img {
+                        border-radius: 50%;
+                        z-index: -1;
+                    }
+
+                    span {
+                        position: absolute;
+                        width: 96px;
+                        height: 96px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: $spaceFont;
+                        color: $darkColor;
+                        font-size: 24px;
+                        background-color: $yellowColor;
+                        border-radius: 50%;
+                        bottom: -18%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+
+                .min-title {
+                    margin-bottom: 27px;
+                }
+
+                .list-text {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.faqs {
+    margin-bottom: 160px;
+
+    .container {
+        .title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .first-faqs,
+        .second-faqs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 64px;
+
+            @include responsive(tablet) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .up-active {
+                transform: rotate(180deg);
+                padding-top: 2px;
+            }
+
+            .title {
+                text-align: left;
+                font-size: 40px;
+
+                @include responsive(min-tablet) {
+                    font-size: 24px;
+                }
+            }
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .item {
+                    width: 730px;
+                    background-color: #F2F5F9;
+                    padding: 32px 40px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+
+                    @include responsive(m-tablet) {
+                        width: 100%;
+                        padding: 32px;
+                    }
+
+                    .text {
+                        margin-top: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

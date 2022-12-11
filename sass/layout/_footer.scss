@@ -1,0 +1,106 @@
+.footer {
+    background-color: #495567;
+
+    .top {
+        background-image: url(../images/svg/footer.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        @include responsive(tablet) {
+            background-position: right;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+
+            @include responsive(m-tablet) {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .title {
+                color: $whiteColor;
+                width: 415px;
+
+                @include responsive(phone) {
+                    width: 100%;
+                }
+            }
+
+            .sign {
+                display: flex;
+                gap: 20px;
+
+                @include responsive(m-phone) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        background-color: #333A44;
+        padding: 35px 0;
+
+        .container {
+            display: flex;
+            align-items: center;
+
+            @include responsive(min-tablet) {
+                flex-direction: column;
+            }
+
+            .logoNav {
+                display: flex;
+                gap: 58px;
+
+                @include responsive(min-tablet) {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 40px;
+                }
+
+                .site-nav .nav-list {
+                    display: flex;
+                    gap: 32px;
+
+                    .nav-link {
+                        font-family: $spaceFont;
+                        transition: .3s;
+
+                        &:hover {
+                            color: $yellowColor;
+                        }
+                    }
+                }
+            }
+
+            .networks {
+                margin-left: auto;
+                display: flex;
+
+                gap: 24px;
+
+                @include responsive(min-tablet) {
+                    margin-right: auto;
+                    margin-top: 40px;
+                }
+
+                a {
+                    transition: .3s;
+
+                    svg path:hover {
+                        fill: #E5ECF4;
+                    }
+                }
+            }
+        }
+    }
+}

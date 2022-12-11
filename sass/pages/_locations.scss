@@ -1,0 +1,88 @@
+.locations {
+    margin-bottom: 122px;
+
+    .container {
+        .map {
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 122px;
+
+            @include responsive(min-tablet) {
+                display: none;
+            }
+        }
+
+        .state {
+            display: none;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+
+            @include responsive(min-tablet) {
+                display: flex;
+                margin-bottom: 72px;
+            }
+
+            div {
+                margin-left: auto;
+                margin-right: auto;
+                width: 311px;
+                height: 72px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #FCB72B26;
+
+                @include responsive(m-phone) {
+                    width: 290px;
+                    height: 60px;
+                }
+            }
+        }
+
+        .min-map {
+            display: none;
+            width: 100%;
+            object-fit: cover;
+
+            @include responsive(min-tablet) {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
+            }
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+
+            @include responsive(m-tablet) {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .title {
+                width: 350px;
+
+                @include responsive(min-tablet) {
+                    width: 100%;
+                }
+            }
+
+            .text {
+                width: 445px;
+
+                @include responsive(min-tablet) {
+                    width: 100%;
+                }
+            }
+
+        }
+
+
+
+    }
+}

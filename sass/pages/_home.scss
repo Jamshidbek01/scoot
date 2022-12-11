@@ -1,0 +1,352 @@
+.hero {
+    background-image: url(../images/jpg/home-hero-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 130px;
+
+    @include responsive(m-tablet) {
+        background-position: center right;
+    }
+
+    .hero-wrapper {
+        background: rgba(12, 33, 63, 0.6);
+        padding-top: 200px;
+        padding-bottom: 130px;
+
+        @include responsive(tablet) {
+            padding-top: 180px;
+            padding-bottom: 180px;
+        }
+    }
+
+    img:first-child {
+        position: absolute;
+        left: -50px;
+        top: 395px;
+
+        @include responsive(tablet) {
+            display: none;
+        }
+    }
+
+    img:nth-child(2) {
+        position: absolute;
+        top: 395px;
+        right: 260px;
+
+        @include responsive(tablet) {
+            right: 0;
+            top: 100%;
+            transform: translateY(-100%);
+            left: -100px;
+        }
+
+        @include responsive(min-tablet) {
+            left: -300px;
+            padding-bottom: 30px;
+        }
+    }
+
+    .container {
+        .hero-info {
+            @include responsive(tablet) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-title {
+                margin-bottom: 40px;
+                width: 540px;
+
+                @include responsive(tablet) {
+                    text-align: center;
+                    width: 573px;
+                    margin-bottom: 28px;
+                }
+
+                @include responsive(min-tablet) {
+                    width: 100%;
+                }
+            }
+
+            .hero-text {
+                color: $whiteColor;
+                margin-bottom: 40px;
+                width: 405px;
+                margin-left: 100px;
+
+                @include responsive(tablet) {
+                    text-align: center;
+                    width: 573px;
+                    margin-bottom: 28px;
+                    margin-left: 0;
+                }
+
+                @include responsive(min-tablet) {
+                    width: 100%;
+                }
+            }
+
+            .btn {
+                margin-left: 100px;
+
+                @include responsive(tablet) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+.second-section {
+    margin-bottom: 150px;
+
+    .container {
+        .list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
+            gap: 30px;
+
+            @include responsive(tablet) {
+                display: block;
+            }
+
+            .list-item {
+                @include responsive(tablet) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 60px;
+                    margin-bottom: 40px;
+                }
+
+                @include responsive(min-tablet) {
+                    flex-direction: column;
+                    gap: 0;
+                    text-align: center;
+                }
+
+                .list-img {
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                    background-color: $yellowColor;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 40px;
+
+                    @include responsive(min-tablet) {
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+
+                .min-title {
+                    margin-bottom: 27px;
+                }
+
+                .list-text {
+                    @include responsive(tablet) {
+                        width: 398px;
+                    }
+
+                    @include responsive(phone) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .list-item:first-child .list-img {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 1000%;
+                    height: 15px;
+                    background-color: #E5ECF4;
+                    z-index: -1;
+                    left: -200px;
+
+                    @include responsive(tablet) {
+                        width: 15px;
+                        height: 700px;
+                        left: 45%;
+                    }
+
+                    @include responsive(min-tablet) {
+                        width: 0;
+                        height: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.last-section {
+    margin-bottom: 300px;
+    overflow: hidden;
+
+    @include responsive(m-tablet) {
+        margin-bottom: 150px;
+    }
+
+    .image {
+        width: 445px;
+        height: 445px;
+
+        @include responsive(min-tablet) {
+            width: 400px;
+            height: 400px;
+        }
+
+        @include responsive(phone) {
+            width: 300px;
+            height: 300px;
+        }
+
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+
+        @include responsive(m-tablet) {
+            gap: 80px;
+        }
+
+        .one,
+        .two,
+        .three {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 190px;
+
+            @include responsive(m-tablet) {
+                flex-direction: column-reverse;
+                gap: 60px;
+                text-align: center;
+            }
+
+            @include responsive(tablet) {
+                gap: 60px;
+            }
+
+            .image {
+                border-radius: 50%;
+            }
+
+            .title {
+                margin-bottom: 24px;
+            }
+
+            .text {
+                margin-bottom: 40px;
+
+                @include responsive(m-tablet) {
+                    margin-bottom: 32px;
+                }
+            }
+
+            .btn:last-child {
+                display: inline-block;
+                height: 56px;
+            }
+
+            .image-wrap {
+                img:nth-child(2) {
+                    @include responsive(min-tablet) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .one,
+        .three {
+            .image-wrap {
+                position: relative;
+
+                img:nth-child(2) {
+                    position: absolute;
+                    top: 0;
+                    right: -480px;
+
+                    @include responsive(m-tablet) {
+                        right: -510px;
+                    }
+                }
+
+                img:nth-child(3) {
+                    position: absolute;
+                    bottom: 0;
+                    left: -120px;
+
+                    @include responsive(min-tablet) {
+                        // width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        .three {
+            .image-wrap {
+                img:nth-child(3) {
+                    position: absolute;
+                    bottom: 0;
+                    left: 250px;
+                    top: 70px;
+
+                    @include responsive(min-tablet) {
+                        left: 200px;
+                    }
+
+                    @include responsive(phone) {
+                        left: 60px;
+                    }
+                }
+            }
+        }
+
+        .two {
+            flex-direction: row-reverse;
+
+            @include responsive(m-tablet) {
+                flex-direction: column-reverse;
+            }
+
+            .image-wrap {
+                position: relative;
+
+                img:nth-child(2) {
+                    position: absolute;
+                    left: -480px;
+
+                    @include responsive(m-tablet) {
+                        left: -510px;
+                    }
+                }
+
+                img:nth-child(3) {
+                    position: absolute;
+                    top: 0;
+                    right: 200px;
+
+                    @include responsive(min-tablet) {
+                        right: 120px;
+                    }
+                }
+            }
+        }
+    }
+}
